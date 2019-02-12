@@ -1,0 +1,11 @@
+commit 86baa38c5c2236890a5fe2f4839fd8a6ae5a43cc (HEAD -> master)
+Author: DariaBorisevich <dashbor00@mail.ru>
+Date:   Tue Feb 12 19:57:56 2019 +0300
+
+    add status.txt
+
+commit cff4e5604e2c93df3fc85e47519e8032c85ee042
+Author: DariaBorisevich <dashbor00@mail.ru>
+Date:   Tue Feb 12 19:46:11 2019 +0300
+
+    add .gitignore
