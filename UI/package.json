@@ -1,0 +1,24 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "Uploaded eslint for js-file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint main.js",
+    "lint:watch": "esw main.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borrya/Educational-practice.git"
+  },
+  "author": "Daria Borisevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borrya/Educational-practice/issues"
+  },
+  "homepage": "https://github.com/Borrya/Educational-practice#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3"
+  }
+}
