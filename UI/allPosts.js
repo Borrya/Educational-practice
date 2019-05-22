@@ -7,6 +7,10 @@ class PhotoPosts {
         this._authors = [];
     }
 
+    get numOfPosts() {
+        return this._photoPosts.length;
+    }
+
     _isIntersect(postTags, configTags) {
         for (let i = 0; i < postTags.length; i++) {
           for (let j = 0; j < configTags.length; j++) {
@@ -40,7 +44,6 @@ class PhotoPosts {
     getPhotoPosts(skip = 0, count = 10, filterConfig = new Filter()){
 
         let result = [];
-        let number = 0;
     
         if ((typeof (skip) !== 'number' || typeof (count) !== 'number')) {
             console.log('There are problems with the input arguments!');
