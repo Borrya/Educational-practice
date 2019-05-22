@@ -2,7 +2,7 @@ class ViewHeader{
 
     static isActive(user){
 
-        if(!(user instanceof ViewUser)){
+        if(!(user instanceof User)){
             console.log('Error!');
 			return;
         }
@@ -25,6 +25,7 @@ class ViewHeader{
         <div id="controlPanel">
         <img id="avatar">
         <button id="sign-in">sign in</button>
+        <button id="sign-up">sign up</button>
         <img id="avatar">
         </div>
         `;
