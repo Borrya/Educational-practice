@@ -1,86 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
 
     <title>Pinkyshot</title>
 
-    <meta charset="UTF-8" />
+    <meta charset='UTF-8' />
 
-    <link rel="shortcut icon" href="images/logotipe2.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
-    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Julius+Sans+One" rel="stylesheet">
+    <link rel='shortcut icon' href='images/logotipe2.png' type='image/x-icon' />
+    <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='css/header.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='css/forms.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='css/sideBar.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='css/addPost.css' type='text/css' media='screen' />
+
+    <link href='https://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Advent+Pro|Julius+Sans+One' rel='stylesheet'>
 
 </head>
 
 <body>
 
+    <div id='authorisation' hidden>
+
+        <p>Pinkyshot</p>
+        <p1 id='sign-title'></p1>
+        <button id='closeSign' style='background-color: transparent;'><img id='picSignClose' src='images/krest.png'
+                style='border: 15px #000000;'></button>
+
+        <div class='registration'>
+
+        </div>
+
+        <form id='sign-form' data-status=''>
+
+            <div class='signing-in'>
+
+                <label for='login' id='input-login'></label>
+                <input id='login' type='text' placeholder='Login' value='' autocomplete='off'
+                    pattern='^[a-z][\da-z]{5,20}$' required>
+
+                <label for='password' id='input-password'></label>
+                <input id='password' type='password' placeholder='Password' value='' autocomplete='off'
+                    pattern='^[\da-z\.]{8,20}$' required>
+
+                <label for='sendData' id='submit'></label>
+                <input id='submit1' type='submit' value='Submit'>
+
+            </div>
+        </form>
+    </div>
+
     <header>
 
-        <div class="totalHeader">
-                <div class="upperHeader">
+        <div class='totalHeader'>
 
-                    <div class="empty"></div>
+            <div class='upperHeader'>
 
-                    <div id="label">PINKYSHOT</div>
+                <div class='empty'></div>
 
-                    <div id="panel"></div>
+                <div id='label'>PINKYSHOT</div>
 
-                </div>
-     
-                <div class="lowerHeader">
+                <div id='panel'></div>
 
-                    <div class="search">
+            </div>
 
-                        <input placeHolder="Search">
+            <div class='lowerHeader'>
 
-                    </div>
+                <div class='search'>
+
+                    <input placeHolder='Search'>
 
                 </div>
 
             </div>
 
+        </div>
+
     </header>
 
-    <div id="posts"></div>
+    <div id='posts'></div>
 
-    <div id="newPost" hidden></div>
+    <form id='newPost' data-status='0' data-id='' hidden>
 
-    <div class="Load more">
-        <button id="loadMore">More photos</button>
+        <div class='leftPartNewPost'>
+            <div id="add-image-box">
+                <img id='emptyPhoto' src='images/empty.png'>
+              </div>
+
+            <label for='uploadNewPhotoFor' id='uploadNewPhoto'>Upload photo</label>
+            <input id='uploadNewPhotoFor' type='file'>
+        </div>
+
+        <div class='rightPartNewPost'>
+            <button class='close' style='background-color: transparent;'><img id='picAddClose' src='images/krest.png'
+                    style='border: 15px #000000;'></button>
+            <div class='addDescription'>
+                <textarea id='enterD' type='text' placeHolder='Enter the description:' name='inputDescr' pattern='.{,200}'></textarea>
+                <textarea id='enterH' type='text' placeHolder='Enter hashtags:' name='inputHashtags' pattern='([a-z0-9]{,15}\s)*'></textarea>
+            </div>
+            <button id='newPhotoSubmit' type='submit'>Ok</button>
+        </div>
+    </form>
+
+    <form id='delete' data-id='' hidden>
+
+        <p>Are you sure?</p>
+
+        <button id='yes'>
+            <div id='textY'>Yes</div>
+        </button>
+
+        <button id='cancel'>
+            <div id='textC'>Cancel</div>
+        </button>
+
+    </form>
+
+    <div id='Load_more' hidden>
+        <button id='loadMore'>More photos</button>
     </div>
 
-    <div class="footer">
+    <div class='footer'>
 
-        <div class="middle">
+        <div class='middle'>
             Pinkyshot | Borisevich Daria | 2 course | 6 group | dashbor00@gmail.com | 10.04.2019
         </div>
     </div>
 
-    <div class="side">
+    <div id='side'>
 
-        <div class="uploadPhoto">
+        <div id='uploadPhoto'>
 
-            <img class="upload" src="images/upload.png">
-
-            <a href="upload.html">
-                <p>Upload photo</p>
-            </a>
+            <img id='upload' src='images/upload.png'>
 
         </div>
 
-        <div id="filter"></div>
+        <div id='filter'>
+            <span class='Filter'>
+                <p><strong>Filter</strong></p>
+            </span>
+
+            <p>By name</p>
+
+            <div class='onoffswitch'>
+                <input type='checkbox' name='onoffswitch' class='onoffswitch-checkbox' id='myonoffswitch' checked>
+                <label class='onoffswitch-label' for='myonoffswitch'></label>
+            </div>
+
+            <p>By date</p>
+
+            <div class='onoffswitch2'>
+                <input type='checkbox' name='onoffswitch2' class='onoffswitch2-checkbox' id='myonoffswitch2' checked>
+                <label class='onoffswitch2-label' for='myonoffswitch2'></label>
+            </div>
+
+            <p>By hashtags</p>
+
+            <div class='onoffswitch3'>
+                <input type='checkbox' name='onoffswitch3' class='onoffswitch3-checkbox' id='myonoffswitch3' checked>
+                <label class='onoffswitch3-label' for='myonoffswitch3'>
+                    <span class='onoffswitch3-inner'></span>
+                    <span class='onoffswitch3-switch'></span>
+                </label>
+            </div>
+            `;
+        </div>
+
     </div>
 
-    
-    <script src="post.js"></script>
-    <script src="filter.js"></script>
-    <script src="allPosts.js"></script>
-    <script src="viewUser.js"></script>
-    <script src="viewClass.js"></script>
-    <script src="viewHeader.js"></script>
-    <script src="index.js"></script>
+
+    <script src='post.js'></script>
+    <script src='filter.js'></script>
+    <script src='allPosts.js'></script>
+    <script src='user.js'></script>
+    <script src='base.js'></script>
+    <script src='storage.js'></script>
+    <script src='viewClass.js'></script>
+    <script src='viewHeader.js'></script>
+    <script src='onClick.js'></script>
+    <script src='onSubmit.js'></script>
+    <script src='userEvent.js'></script>
+    <script src='allDynamic.js'></script>
+
 
 </body>
 
