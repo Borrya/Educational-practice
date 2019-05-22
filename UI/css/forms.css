@@ -1,0 +1,80 @@
+#authorisation{
+    position: fixed;
+    top: 110px;
+    width: 350px;
+    height: 500px;
+    background: #e8eaf6;
+    border: 2px solid #b1c5df;
+    border-radius: 50px;
+    z-index: 1000;
+}
+
+#closeSign{
+    width: 20%;
+    margin-left: 73%;
+    margin-top: 2%;
+    outline: none;
+}
+
+#authorisation p{
+    position: absolute;
+    top: 10%;
+    left: 26%;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#authorisation p1{
+    position: absolute;
+    top: 25%;
+    left: 8.5%;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+input[type="text"]{
+    width: 65%;
+    height: 30%;
+    margin-top: 43%;
+    margin-left: 17.5%;
+    border: 1px solid #b1c5df;
+    padding: 5%;
+}
+
+input[placeholder="Login"]{
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 15px;
+}
+
+input[type="password"]{
+    width: 65%;
+    height: 30%;
+    margin-top: 13%;
+    margin-left: 17.5%;
+    border: 1px solid #b1c5df;
+    padding: 5%;
+}
+
+input[placeholder="Password"]{
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 15px;
+}
+
+#submit1{
+    position: absolute;
+    font-size: 20px;
+    width: 25%;
+    height: 11%;
+    top: 77%;
+    left: 36%;
+    padding: 4%;
+    background: #89b4b9;
+    border-radius: 10px;
+    outline: none;
+}
+
+#submit1:hover {
+    background: #55777a;
+}

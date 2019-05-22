@@ -1,0 +1,135 @@
+#newPost{
+    position: fixed;
+    top: 130px;
+    width: 700px;
+    height: 500px;
+    border: 2px #7c7c7c solid;
+    background: #fdeff1;
+    z-index: 1000;
+}
+
+.leftPartNewPost{
+    position: absolute;
+    background: #e9d8d8;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 60%;
+    border-right: 1px #7c7c7c solid;
+}
+
+#add-image-box {
+    width: 100%;
+    height: 78%;
+    border-bottom: 1px #7c7c7c solid;
+    background: white;
+}
+#emptyPhoto{
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#uploadNewPhoto{
+    position: absolute;
+    bottom: 6%;
+    left: 25%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    text-align: center;
+    padding: 2%;
+    height: 10%;
+    background: #756060;  
+    border: 1px solid #756060;
+    box-shadow: 0 0 10px #5a4949;
+    border-radius: 40px; 
+    cursor: pointer;  
+}
+
+#uploadNewPhoto:hover {
+    background: #523f3f;  
+}
+
+#uploadNewPhoto:active {
+    box-shadow: inset 2px 2px 2px #523f3f;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.text{
+    margin-top: 8%;
+    text-emphasis: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 19px;
+    text-align: center;  
+}
+
+.uploadNew{
+    width: 75%;
+    height: 0%;  
+}
+
+.rightPartNewPost{
+    position: absolute;
+    background: #e9d8d8;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 12%;   
+    border-bottom: 1px #7c7c7c solid;
+}
+
+.close{
+    width: 30%;
+    margin-left: 65%;
+    outline: none;
+    cursor: pointer;
+}
+
+#picAddClose, #picSignClose{
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 65%;
+    margin-top: 7%;
+    margin-right: 6%;
+    margin-left: 49%;
+}
+
+#picAddClose:hover, #picSignClose:hover{
+    box-shadow: 200px 0 0 0 #aa9393 inset;    
+}
+
+.addDescription textarea{
+    margin-top: 7%;
+    width:100%;
+    height:150px;
+    resize: none;
+    -moz-appearance: none;
+}
+
+#newPhotoSubmit{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    text-align: center;
+    background: #756060;  
+    border: 1px solid #756060;
+    box-shadow: 0 0 10px #5a4949;
+    border-radius: 60px; 
+    margin-left: 40%;
+    margin-top: 20px;
+    padding: 3%;
+    outline: none;
+    cursor: pointer;
+}
+
+#newPhotoSubmit:hover {
+    background: #523f3f;  
+}
+
+#newPhotoSubmit:active {
+    box-shadow: inset 2px 2px 2px #523f3f;
+}
