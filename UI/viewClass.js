@@ -11,6 +11,14 @@ class View {
 
 	decrementShown() {
 		this._countViewPhoto--;
+    }
+    
+    refreshShown() {
+		this._countViewPhoto = 0;
+    }
+    
+    get numberOfShown() {
+		return this._countViewPhoto;
 	}
       
 	_reformDate(date) {
@@ -38,8 +46,8 @@ class View {
 			hashtags.appendChild(span);
 		});
     }
-    
-    makePost(post, postsContainer) {
+
+    makePost(post, postsContainer, user) {
     
         let photoPost = document.createElement('div');
         photoPost.classList.add('border');
@@ -54,9 +62,9 @@ class View {
 
                     <div class="emptypanel">
                         <div class="photoPanel">
-                            <button id="likeButton"><img class="like" src=${post.likeButton}></button>
-                            <button id="editButton"><img class="edit" src=${post.editButton}></button>
-                            <button id="trashButton"><img class="trash" src=${post.deleteButton}></button>
+                            <button class="likeButton" hidden><img class="like" src="images/like.png"></button>
+                            <button class="editButton" hidden><img class="edit" src="images/edit.png"></button>
+                            <button class="trashButton" hidden><img class="trash" src="images/trash.png"></button>
                         </div>
                     </div>
                 </div>
@@ -65,7 +73,7 @@ class View {
                         <div class="user">
 
                             <div class="avatar">
-                                <img class="avatar2" src=${post.authorPhoto}>
+                                
                             </div>
 
                             <div class="userName">
@@ -102,9 +110,20 @@ class View {
             </div>
         `;
         this._fillHashtags(post, photoPost);
+        if (user.userName === post.author) {
+            photoPost.querySelector('.editButton').hidden = false;
+            photoPost.querySelector('.trashButton').hidden = false;
+        }
+        if (user.userName !== '') {
+            photoPost.querySelector('.likeButton').hidden = false;
+        }
+        if (post.likes.includes(user.userName)) {
+            photoPost.querySelector('.like').src = 'images/newLike.png';
+        }
         postsContainer.appendChild(photoPost);
     }
 
+    
     setFilter(filter = new Filter()) {
 
 		if (!(filter instanceof Filter) || !(filter.validateFilter())) {
@@ -114,20 +133,18 @@ class View {
 		this._curFilter = filter;
 	}
 
-    showPost(post) {
+    showPost(post, user) {
 
         let allPhotos = document.getElementById('posts');
-        this.makePost(post, allPhotos);
+        this.makePost(post, allPhotos, user);
     }  
 
-    showAllPosts(allPhotos, skip = 0, amount = 10) {
-
-		allPhotos.getPhotoPosts(skip, amount, this._curFilter).forEach((post) => {
-			this.showPost(post);
-        });
-        
-        this._countViewPhoto += (amount - skip);
-    }
+    showAllPosts(postList, user) {
+		postList.forEach((post) => {
+			this.showPost(post, user);
+			this.incrementShown();
+		});
+	}
 
     removePost(id = 0) {
 
