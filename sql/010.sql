@@ -1,0 +1,3 @@
+USE photo_portal;
+SELECT * FROM photo_post 
+ORDER BY CREATION_DATE DESC LIMIT 5;

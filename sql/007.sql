@@ -1,0 +1,2 @@
+USE photo_portal;
+SELECT DISTINCT NAME FROM user;
